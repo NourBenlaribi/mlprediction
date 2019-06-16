@@ -1,0 +1,7 @@
+# requirements.in
+sklearn
+numpy
+matplotlib
+pandas
+imblearn
+statsmodels
