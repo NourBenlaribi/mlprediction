@@ -22,7 +22,7 @@ def clean_data(df, to_keep_healthy=7, to_keep_failure=20):
     return df
 
 
-def flag_failures(df, time_window_size):
+def flag_failures(df, time_window_size=20):
     i = 0
     failure = False
     current_hdd = None
