@@ -1,4 +1,4 @@
-from arguments import fill_by, use_smoothing, use_small_data, iterations, window_size_from, window_size_to, out
+from arguments import fill_by, use_smoothing, use_small_data, iterations, window_size_from, window_size_to, out, use_all_data
 from datetime import datetime
 import os
 
@@ -42,8 +42,9 @@ else:
     raise Exception('error: fill method not known')
 df.reset_index(drop=True, inplace=True)
 
-print("##### pre-processing #####")
-df = clean_data(df)
+if not use_all_data:
+    print("##### pre-processing #####")
+    df = clean_data(df)
 
 if use_smoothing:
     print("##### applying exponential smoothing #####")

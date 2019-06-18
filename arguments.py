@@ -3,6 +3,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Machine learning applied to hard drives failures')
 parser.add_argument('--fill_by', help='how to fill the missing args')
 parser.add_argument('--iterations', help='how many iterations', default=180, type=int)
+parser.add_argument('--use_all_data', help='use all data')
 parser.add_argument('--window_size_from', help='minimum window size', default=1, type=int)
 parser.add_argument('--window_size_to', help='maximum window size', default=20, type=int)
 parser.add_argument('--use_smoothing', help='use exponential smoothing')
@@ -17,3 +18,4 @@ window_size_from = args.window_size_from
 window_size_to = args.window_size_to
 iterations = args.iterations
 out = args.out
+use_all_data = args.use_all_data == 'True'
