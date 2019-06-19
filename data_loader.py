@@ -19,8 +19,8 @@ def read_month(month, year, columns=COLUMNS):
 
 
 def read_year(year, columns=COLUMNS):
-    df = read_month(4, year, columns)
-    for i in range(5, 13):
+    df = read_month(1, year, columns)
+    for i in range(2, 13):
         df = pd.concat([df, read_month(i, year, columns)])
     return df
 

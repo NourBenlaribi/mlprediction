@@ -33,8 +33,10 @@ from smoothing_smart_param import smooth
 
 print("##### loading data #####")
 if use_small_data:
+    print("##### loading small data #####")
     df = load_small_data_frame()
 else:
+    print("##### loading all data #####")
     df = load_data_frame_2014()
 
 print("##### sorting data #####")
