@@ -39,7 +39,7 @@ def run():
             processed_iterations.append(iteration)
             process = Process(target=train_for_window, args=(iteration,))
             process.start()
-            processes.append(processes)
+            processes.append(process)
             if iterations.empty():
                 break
 
@@ -48,7 +48,7 @@ def run():
 
         for it in processed_iterations:
             for window in range(1, 21):
-                df = pd.read_csv(f'{args.out}/iteration_{it}_window_{window}')
+                df = pd.read_csv(f'{args.out}/iteration_{it}_window_{window}.csv')
                 results = results.append(df)
         save_results(results, args.out_final, processed_iterations[-1])
 
